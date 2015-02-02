@@ -1,0 +1,292 @@
+<head><version>2.63.17</version></head>
+<Load_Image>
+  <filename>C:\Users\Colin\Desktop\toteImages\1.jpg</filename>
+  <frame_delay>33</frame_delay>
+  <load_numbered_images>FALSE</load_numbered_images>
+  <numerical_sort>TRUE</numerical_sort>
+  <page_number>1</page_number>
+  <recursive>TRUE</recursive>
+</Load_Image>
+<Read_AVI disabled>
+  <filename>C:\Users\Colin\Desktop\toteImages\vid3.avi</filename>
+  <frame_increment>1</frame_increment>
+  <loop_playback>1</loop_playback>
+  <playback_speed_index>2</playback_speed_index>
+  <running>TRUE</running>
+  <skip_first_type>-1</skip_first_type>
+</Read_AVI>
+<Radial_Distortion>
+  <center_x>0.5</center_x>
+  <center_y>0.5</center_y>
+  <coeff_a>-1000.0</coeff_a>
+  <coeff_b>0.39</coeff_b>
+  <coeff_c>0.0</coeff_c>
+  <coeff_d>0.0</coeff_d>
+  <coeff_e>0.0</coeff_e>
+  <crop_image>FALSE</crop_image>
+  <scale>1000.0</scale>
+</Radial_Distortion>
+<Marker>
+  <include_graphics>0</include_graphics>
+  <name>Radial Marker</name>
+  <revert_to>Current</revert_to>
+</Marker>
+<Color_Threshold>
+  <blue_end>211</blue_end>
+  <blue_start>113</blue_start>
+  <green_end>214</green_end>
+  <green_start>115</green_start>
+  <red_end>194</red_end>
+  <red_start>116</red_start>
+  <result_type>2</result_type>
+</Color_Threshold>
+<Blob_Size>
+  <limit>1024</limit>
+  <mask>FALSE</mask>
+  <max_area>0</max_area>
+  <min_area>10000</min_area>
+  <threshold>0</threshold>
+  <treat_as_color_image>FALSE</treat_as_color_image>
+</Blob_Size>
+<Fill>
+  <check_border>FALSE</check_border>
+  <fill_with_average_color>TRUE</fill_with_average_color>
+  <four_pixel_connectivity>FALSE</four_pixel_connectivity>
+  <size>722</size>
+</Fill>
+<Colorize>
+  <rgb>#FFFFFF</rgb>
+</Colorize>
+<Blob_Filter>
+  <create_blob_array_variable>FALSE</create_blob_array_variable>
+  <filters>
+    <tab>
+      <filter>
+        <count_threshold>0</count_threshold>
+        <create_array>0</create_array>
+        <filter_id>61</filter_id>
+        <invert_count>0</invert_count>
+        <invert_threshold>0</invert_threshold>
+        <weight_threshold>0.5</weight_threshold>
+      </filter>
+    </tab>
+    <tab:2/>
+    <tab:3/>
+    <tab:4/>
+    <tab:5/>
+    <tab:6/>
+  </filters>
+  <font_size>Normal (10pt)</font_size>
+  <largest_is_background>FALSE</largest_is_background>
+  <show_weights>FALSE</show_weights>
+  <sort_array_on_x>FALSE</sort_array_on_x>
+  <sort_array_on_y>FALSE</sort_array_on_y>
+</Blob_Filter>
+<Close>
+  <close_borders>FALSE</close_borders>
+  <dilate_count>10</dilate_count>
+  <erode_count>10</erode_count>
+  <kernal_shape>4</kernal_shape>
+  <restrict_dilation>FALSE</restrict_dilation>
+  <symmetrical>TRUE</symmetrical>
+</Close>
+<Erode>
+  <count>6</count>
+  <erode_borders>FALSE</erode_borders>
+  <kernal_shape>4</kernal_shape>
+</Erode>
+<Blob_Size>
+  <limit>1024</limit>
+  <mask>FALSE</mask>
+  <max_area>0</max_area>
+  <min_area>10000</min_area>
+  <threshold>0</threshold>
+  <treat_as_color_image>FALSE</treat_as_color_image>
+</Blob_Size>
+<Blob_Filter>
+  <create_blob_array_variable>FALSE</create_blob_array_variable>
+  <filters>
+    <tab>
+      <filter>
+        <count_threshold>1</count_threshold>
+        <create_array>0</create_array>
+        <filter_id>11</filter_id>
+        <invert_count>0</invert_count>
+        <invert_threshold>0</invert_threshold>
+        <weight_threshold>0.5</weight_threshold>
+      </filter>
+      <filter:2>
+        <count_threshold>0</count_threshold>
+        <create_array>0</create_array>
+        <filter_id>61</filter_id>
+        <invert_count>0</invert_count>
+        <invert_threshold>0</invert_threshold>
+        <weight_threshold>1</weight_threshold>
+      </filter:2>
+    </tab>
+    <tab:2/>
+    <tab:3/>
+    <tab:4/>
+    <tab:5/>
+    <tab:6/>
+  </filters>
+  <font_size>Normal (10pt)</font_size>
+  <largest_is_background>FALSE</largest_is_background>
+  <show_weights>FALSE</show_weights>
+  <sort_array_on_x>FALSE</sort_array_on_x>
+  <sort_array_on_y>FALSE</sort_array_on_y>
+</Blob_Filter>
+<Smooth_Hull>
+  <window_size>20</window_size>
+</Smooth_Hull>
+<Convex_Hull/>
+<Blob_Replace>
+  <color_index>3</color_index>
+  <fill_shape>TRUE</fill_shape>
+  <order_array_on_x>FALSE</order_array_on_x>
+  <order_array_on_y>FALSE</order_array_on_y>
+  <overlay_image>Radial Marker</overlay_image>
+  <shape_index>12</shape_index>
+  <thickness>1</thickness>
+</Blob_Replace>
+<Python_Program_v3x>
+  <filename>.\pointDetection.py</filename>
+  <script>import rr
+
+c = rr.GetArrayVariable("MEQ_COORDINATES")
+
+try:
+	#TopRight, TopLeft, BottomLeft, BottomRight
+	points = ([c[0], c[1]], [c[2], c[3]], [c[4], c[5]], [c[6], c[7]])
+	
+	rr.SetArrayVariable("P1", points[0])
+	rr.SetArrayVariable("P2", points[1])
+	rr.SetArrayVariable("P3", points[2])
+	rr.SetArrayVariable("P4", points[3])
+except (TypeError, IndexError):
+	rr.SetArrayVariable("P1", [0, 0])
+	rr.SetArrayVariable("P2", [0, 0])
+	rr.SetArrayVariable("P3", [0, 0])
+	rr.SetArrayVariable("P4", [0, 0])</script>
+  <source_mode>file</source_mode>
+  <tab_size_index>1</tab_size_index>
+</Python_Program_v3x>
+<If_Statement>
+  <comparison_1>1</comparison_1>
+  <comparison_2>-1</comparison_2>
+  <comparison_3>-1</comparison_3>
+  <comparison_4>-1</comparison_4>
+  <comparison_type_1>3</comparison_type_1>
+  <comparison_type_2>-1</comparison_type_2>
+  <comparison_type_3>-1</comparison_type_3>
+  <comparison_type_4>-1</comparison_type_4>
+  <has_else>FALSE</has_else>
+  <is_latch>FALSE</is_latch>
+  <join_1>-1</join_1>
+  <join_2>-1</join_2>
+  <join_3>-1</join_3>
+  <value_1>1</value_1>
+  <variable_1>Visible</variable_1>
+</If_Statement>
+<Display_Point>
+  <clear_image>FALSE</clear_image>
+  <data_source>1</data_source>
+  <display_as_annotation>FALSE</display_as_annotation>
+  <shape_color>red</shape_color>
+  <shape_index>4</shape_index>
+  <shape_size>2</shape_size>
+  <thickness>1</thickness>
+  <xy_variable>TopRight</xy_variable>
+  <x_coord>100</x_coord>
+  <x_variable>P1X</x_variable>
+  <y_coord>100</y_coord>
+  <y_variable>P1Y</y_variable>
+</Display_Point>
+<Display_Point>
+  <clear_image>FALSE</clear_image>
+  <data_source>1</data_source>
+  <display_as_annotation>FALSE</display_as_annotation>
+  <shape_color>red</shape_color>
+  <shape_index>4</shape_index>
+  <shape_size>2</shape_size>
+  <thickness>1</thickness>
+  <xy_variable>TopLeft</xy_variable>
+  <x_coord>100</x_coord>
+  <x_variable>P1X</x_variable>
+  <y_coord>100</y_coord>
+  <y_variable>P1Y</y_variable>
+</Display_Point>
+<Display_Point>
+  <clear_image>FALSE</clear_image>
+  <data_source>1</data_source>
+  <display_as_annotation>FALSE</display_as_annotation>
+  <shape_color>red</shape_color>
+  <shape_index>4</shape_index>
+  <shape_size>2</shape_size>
+  <thickness>1</thickness>
+  <xy_variable>BottomLeft</xy_variable>
+  <x_coord>100</x_coord>
+  <x_variable>P1X</x_variable>
+  <y_coord>100</y_coord>
+  <y_variable>P1Y</y_variable>
+</Display_Point>
+<Display_Point>
+  <clear_image>FALSE</clear_image>
+  <data_source>1</data_source>
+  <display_as_annotation>FALSE</display_as_annotation>
+  <shape_color>red</shape_color>
+  <shape_index>4</shape_index>
+  <shape_size>2</shape_size>
+  <thickness>1</thickness>
+  <xy_variable>BottomRight</xy_variable>
+  <x_coord>100</x_coord>
+  <x_variable>P1X</x_variable>
+  <y_coord>100</y_coord>
+  <y_variable>P1Y</y_variable>
+</Display_Point>
+<Display_Point>
+  <clear_image>FALSE</clear_image>
+  <data_source>1</data_source>
+  <display_as_annotation>FALSE</display_as_annotation>
+  <shape_color>red</shape_color>
+  <shape_index>4</shape_index>
+  <shape_size>2</shape_size>
+  <thickness>1</thickness>
+  <xy_variable>CenterPoint</xy_variable>
+  <x_coord>100</x_coord>
+  <y_coord>100</y_coord>
+</Display_Point>
+<Display_Variables>
+  <border_color>red</border_color>
+  <dim_background>TRUE</dim_background>
+  <display_as_annotation>FALSE</display_as_annotation>
+  <display_value_only>FALSE</display_value_only>
+  <font_color>white</font_color>
+  <font_size>Normal (10pt)</font_size>
+  <northwest>Orientation
+ToteAngle
+</northwest>
+</Display_Variables>
+<Display_Line>
+  <clear_image>FALSE</clear_image>
+  <color_index>5</color_index>
+  <display_as_annotation>FALSE</display_as_annotation>
+  <display_mode>2</display_mode>
+  <thickness>-1</thickness>
+  <xy_list_map>BottomCenter</xy_list_map>
+  <x_end>0</x_end>
+  <x_start>0</x_start>
+  <y_end>0</y_end>
+  <y_start>0</y_start>
+</Display_Line>
+<end_if/>
+<Display_Variables>
+  <border_color>red</border_color>
+  <dim_background>TRUE</dim_background>
+  <display_as_annotation>FALSE</display_as_annotation>
+  <display_value_only>FALSE</display_value_only>
+  <font_color>white</font_color>
+  <font_size>Normal (10pt)</font_size>
+  <southeast>Visible
+</southeast>
+</Display_Variables>
