@@ -1,6 +1,6 @@
 <head><version>2.71.11</version></head>
-<Load_Image disabled>
-  <filename>C:\Users\Colin\Desktop\toteImages\1.jpg</filename>
+<Load_Image>
+  <filename>.\1.jpg</filename>
   <frame_delay>33</frame_delay>
   <load_numbered_images>FALSE</load_numbered_images>
   <numerical_sort>TRUE</numerical_sort>
@@ -15,30 +15,11 @@
   <running>TRUE</running>
   <skip_first_type>-1</skip_first_type>
 </Read_AVI>
-<Axis_Internet_Camera>
-  <auto_back_light>TRUE</auto_back_light>
-  <auto_exposure>FALSE</auto_exposure>
-  <auto_white_balance>TRUE</auto_white_balance>
-  <brightness_value>50</brightness_value>
-  <camera_type>1</camera_type>
-  <color_level_value>50</color_level_value>
-  <compression_index>5</compression_index>
-  <contrast_value>50</contrast_value>
-  <exposure_value>50</exposure_value>
-  <ip_address>10.17.68.11</ip_address>
-  <is_active>TRUE</is_active>
-  <mirrot>FALSE</mirrot>
-  <password>root</password>
-  <port>80</port>
-  <resolution>800x600</resolution>
-  <sharpness_value>50</sharpness_value>
-  <username>root</username>
-</Axis_Internet_Camera>
 <Radial_Distortion>
   <center_x>0.5</center_x>
   <center_y>0.5</center_y>
   <coeff_a>-1000.0</coeff_a>
-  <coeff_b>0.32</coeff_b>
+  <coeff_b>0.39</coeff_b>
   <coeff_c>0.0</coeff_c>
   <coeff_d>0.0</coeff_d>
   <coeff_e>0.0</coeff_e>
@@ -51,25 +32,14 @@
   <revert_to>Current</revert_to>
 </Marker>
 <Color_Threshold>
-  <blue_end>219</blue_end>
-  <blue_start>139</blue_start>
-  <green_end>224</green_end>
-  <green_start>144</green_start>
-  <red_end>231</red_end>
-  <red_start>148</red_start>
+  <blue_end>211</blue_end>
+  <blue_start>113</blue_start>
+  <green_end>214</green_end>
+  <green_start>115</green_start>
+  <red_end>194</red_end>
+  <red_start>116</red_start>
   <result_type>2</result_type>
 </Color_Threshold>
-<Colorize>
-  <rgb>#FFFFFF</rgb>
-</Colorize>
-<Close>
-  <close_borders>FALSE</close_borders>
-  <dilate_count>1</dilate_count>
-  <erode_count>1</erode_count>
-  <kernal_shape>4</kernal_shape>
-  <restrict_dilation>FALSE</restrict_dilation>
-  <symmetrical>TRUE</symmetrical>
-</Close>
 <Blob_Size>
   <limit>1024</limit>
   <mask>FALSE</mask>
@@ -84,14 +54,9 @@
   <four_pixel_connectivity>FALSE</four_pixel_connectivity>
   <size>722</size>
 </Fill>
-<Close>
-  <close_borders>FALSE</close_borders>
-  <dilate_count>2</dilate_count>
-  <erode_count>2</erode_count>
-  <kernal_shape>4</kernal_shape>
-  <restrict_dilation>FALSE</restrict_dilation>
-  <symmetrical>TRUE</symmetrical>
-</Close>
+<Colorize>
+  <rgb>#FFFFFF</rgb>
+</Colorize>
 <Blob_Filter>
   <create_blob_array_variable>FALSE</create_blob_array_variable>
   <filters>
@@ -119,14 +84,14 @@
 </Blob_Filter>
 <Close>
   <close_borders>FALSE</close_borders>
-  <dilate_count>5</dilate_count>
-  <erode_count>5</erode_count>
+  <dilate_count>10</dilate_count>
+  <erode_count>10</erode_count>
   <kernal_shape>4</kernal_shape>
   <restrict_dilation>FALSE</restrict_dilation>
   <symmetrical>TRUE</symmetrical>
 </Close>
 <Erode>
-  <count>3</count>
+  <count>6</count>
   <erode_borders>FALSE</erode_borders>
   <kernal_shape>4</kernal_shape>
 </Erode>
@@ -172,7 +137,7 @@
   <sort_array_on_y>FALSE</sort_array_on_y>
 </Blob_Filter>
 <Smooth_Hull>
-  <window_size>17</window_size>
+  <window_size>20</window_size>
 </Smooth_Hull>
 <Convex_Hull/>
 <Blob_Replace>
@@ -180,7 +145,6 @@
   <fill_shape>TRUE</fill_shape>
   <order_array_on_x>FALSE</order_array_on_x>
   <order_array_on_y>FALSE</order_array_on_y>
-  <overlay_image>Radial Marker</overlay_image>
   <shape_index>12</shape_index>
   <thickness>1</thickness>
 </Blob_Replace>
@@ -299,11 +263,9 @@ except (TypeError, IndexError):
   <display_as_annotation>FALSE</display_as_annotation>
   <display_value_only>FALSE</display_value_only>
   <font_color>white</font_color>
-  <font_size>Huge (24pt)</font_size>
+  <font_size>Normal (10pt)</font_size>
   <northwest>Orientation
 ToteAngle
-ToteX
-ToteY
 </northwest>
 </Display_Variables>
 <Display_Line>
@@ -312,7 +274,7 @@ ToteY
   <display_as_annotation>FALSE</display_as_annotation>
   <display_mode>2</display_mode>
   <thickness>-1</thickness>
-  <xy_list_map>BottomCenterLine</xy_list_map>
+  <xy_list_map>BottomCenter</xy_list_map>
   <x_end>0</x_end>
   <x_start>0</x_start>
   <y_end>0</y_end>
@@ -329,15 +291,3 @@ ToteY
   <southeast>Visible
 </southeast>
 </Display_Variables>
-<NetworkTables>
-  <delay>100</delay>
-  <filter_type_index>0</filter_type_index>
-  <hostname>10.17.68.2</hostname>
-  <port>1735</port>
-  <prefix>/SmartDashboard/</prefix>
-  <variables_to_send>ToteAngle
-ToteX
-ToteY
-Visible</variables_to_send>
-  <variable_type_index>0</variable_type_index>
-</NetworkTables>
